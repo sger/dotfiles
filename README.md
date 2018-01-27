@@ -1,1 +1,3 @@
 Dotfiles
+
+Install `./setup.sh`
