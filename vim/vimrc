@@ -15,7 +15,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
 
+" Go
+Plug 'fatih/vim-go'
+Plug 'fatih/vim-hclfmt'
+
 call plug#end()
+
+"=====================================================
+"===================== SETTINGS ======================
 
 set nocompatible
 filetype off
@@ -90,7 +97,11 @@ set hidden
 
 " Use unix formats instead of windows
 set fileformats=unix,dos,mac
+
+" Do not show matching brackets by flickering
 set noshowmatch
+
+" Hide default show mode
 set noshowmode
 
 " Ignore case when searching
@@ -100,11 +111,27 @@ set ignorecase
 set smartcase
 
 set completeopt=menu,menuone
+
+" Syntax hightlighting
 set nocursorcolumn
 set nocursorline
 set updatetime=300
+
+" Maximum window size
 set pumheight=10
 set lazyredraw
+
+"http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
+set clipboard^=unnamed
+set clipboard^=unnamedplus
+
+" ~/.viminfo needs to be writable and readable
+set viminfo='200
+
+if has('persistent_undo')
+ set undofile
+ set undodir=~/.cache/vim
+endif
 
 " Set tabs
 set tabstop=2
@@ -133,3 +160,20 @@ let g:mix_format_elixir_bin_path = '~/.asdf/installs/elixir/ref-master/bin'
 
 " Alchemist
 let g:alchemist_tag_disable = 1
+
+"=====================================================
+"===================== MAPPINGS ======================
+
+" Change mapleader
+let mapleader = ","
+
+" Open vimrc in new tab
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+" Center the screen
+noremap <space> zz
