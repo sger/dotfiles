@@ -2,11 +2,23 @@ call plug#begin('~/.vim/plugged')
 
 " Utilities
 Plug 'scrooloose/nerdtree'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Elixir
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'mhinz/vim-mix-format'
+Plug 'powerman/vim-plugin-AnsiEsc'
+
+" Phoenix
+Plug 'c-brenn/phoenix.vim'
+Plug 'tpope/vim-projectionist'
 
 " UI
 Plug 'tomasr/molokai'
@@ -134,8 +146,8 @@ set clipboard^=unnamedplus
 set viminfo='200
 
 if has('persistent_undo')
- set undofile
- set undodir=~/.cache/vim
+  set undofile
+  set undodir=~/.cache/vim
 endif
 
 " Set tabs
@@ -172,12 +184,19 @@ let g:mix_format_elixir_bin_path = '~/.asdf/installs/elixir/ref-master/bin'
 let g:alchemist_tag_disable = 1
 
 " Nerdtree
-let g:NERDTreeWinPos = "lef"
+let g:NERDTreeWinPos = "left"
 let g:NERDTreeQuitOnOpen = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=[]
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources = {}
+let g:deoplete#sources._ = ['file', 'neosnippet']
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#input_patterns = {}
 
 "=====================================================
 "===================== MAPPINGS ======================
@@ -190,7 +209,7 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " Source the vimrc file after saving it
 if has("autocmd")
-    autocmd bufwritepost .vimrc source $MYVIMRC
+  autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
 " Saving
