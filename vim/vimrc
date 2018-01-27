@@ -28,34 +28,89 @@ set ttymouse=xterm2
 set ttyscroll=3
 endif
 
+" Always display the status line
 set laststatus=2
+
+" Shift to the next round tab stop
+set shiftround
+
+" Enable hightlighting of the current line
+set cursorline
+
+" Set encoding to UTF-8
 set encoding=utf-8
+
+" Automatically reread files
 set autoread
+
+" Automatically indent
 set autoindent
+
+" Reconfigure backspace key
 set backspace=indent,eol,start
+
+" Enable incremental search
 set incsearch
+
+" Enable hightlighting results
 set hlsearch
+
+" Enable mouse mode
 set mouse=a
+
+" Disable error bells
 set noerrorbells
+
+" Show linenumbers
 set number
+set relativenumber
+set ruler
+
+" Show incomplete commands
 set showcmd
+
+" Disable swap file
 set noswapfile
+
+" Disable backup files
 set nobackup
+
+" Split vertical windows right to the current windows
 set splitright
+
+" Split horizontal windows below to the current windows
 set splitbelow
+
+" Automatically execute :write
 set autowrite
+
+" Opening a new file when the current buffer has unsaved changes causes
+" files to be hidden instead of closed
 set hidden
+
+" Use unix formats instead of windows
 set fileformats=unix,dos,mac
 set noshowmatch
 set noshowmode
+
+" Ignore case when searching
 set ignorecase
+
+" Ignore case when searching lowecase
 set smartcase
+
 set completeopt=menu,menuone
 set nocursorcolumn
 set nocursorline
 set updatetime=300
 set pumheight=10
 set lazyredraw
+
+" Set tabs
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab
 
 " color
 syntax enable
