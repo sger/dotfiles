@@ -3,13 +3,6 @@ call plug#begin('~/.vim/plugged')
 " Utilities
 Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 " Elixir
 Plug 'slashmili/alchemist.vim'
@@ -191,13 +184,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=[]
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources = {}
-let g:deoplete#sources._ = ['file', 'neosnippet']
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#input_patterns = {}
 
 "=====================================================
 "===================== MAPPINGS ======================
