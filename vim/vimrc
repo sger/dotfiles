@@ -185,7 +185,6 @@ let g:NERDTreeWinPos = "left"
 let g:NERDTreeQuitOnOpen = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore=[]
 
 "=====================================================
@@ -229,9 +228,8 @@ nnoremap <Leader>go :Git checkout<Space>
 nnoremap <Leader>gps :Git push<CR>
 nnoremap <Leader>gpl :Git pull<CR>
 
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+" NerdTree
+nmap <leader>n :NERDTreeToggle<CR>
 
 " Go
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
