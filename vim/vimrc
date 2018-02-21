@@ -175,7 +175,7 @@ let g:hybrid_reduced_contrast = 1
 
 " Elixir
 let g:mix_format_on_save = 1
-let g:mix_format_elixir_bin_path = '~/.asdf/installs/elixir/ref-master/bin'
+let g:mix_format_elixir_bin_path = '/usr/local/bin'
 
 " Alchemist
 let g:alchemist_tag_disable = 1
