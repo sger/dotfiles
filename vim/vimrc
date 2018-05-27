@@ -29,9 +29,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'fatih/vim-hclfmt'
 
-" Swift
-Plug 'apple/swift', {'rtp': 'utils/vim'}
-
 call plug#end()
 
 "=====================================================
