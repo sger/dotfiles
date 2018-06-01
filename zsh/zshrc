@@ -31,4 +31,6 @@ export TERM="screen-256color"
 export CDPATH=.:$GOPATH/src/github.com
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:$GOBIN"
 
+export PATH="$HOME/.fastlane/bin:$PATH"
+
 eval "$(rbenv init -)"
