@@ -20,6 +20,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git gitfast zsh-autosuggestions)
 
+export TERM="screen-256color"
+
 source $ZSH/oh-my-zsh.sh
 
 export LC_ALL=en_US.UTF-8
@@ -27,7 +29,6 @@ export LANG=en_US.UTF-8
 
 export GOPATH=$HOME/Development/go
 export GOBIN=$HOME/Development/go/bin
-export TERM="screen-256color"
 export CDPATH=.:$GOPATH/src/github.com
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:$GOBIN"
 
