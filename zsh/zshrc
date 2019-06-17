@@ -34,6 +34,9 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:$GOB
 
 export PATH="$HOME/.fastlane/bin:$PATH"
 
+export GTEST_DIR="$HOME/Development/build/googletest/googletest"
+export GMOCK_DIR="$HOME/Development/build/googletest/googlemock"
+
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -52,5 +55,17 @@ fi
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="red"
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+function gtest() {
+  gtestexec='gtest'
+  g++ -std=c++11 -isystem ${GTEST_DIR}/include -pthread "$@" ${GTEST_DIR}/libgtest.a -o $gtestexec
+  ./$gtestexec
+}
+
+function gmock() {
+  gmockexec='gmock'
+  g++ -std=c++11 -isystem ${GTEST_DIR}/include -isystem ${GMOCK_DIR}/include -pthread "$@" ${GMOCK_DIR}/libgmock.a -o $gmockexec
+  ./$gmockexec
+}
 
 eval "$(rbenv init -)"
