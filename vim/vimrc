@@ -158,16 +158,13 @@ set title
 syntax enable
 set t_Co=256
 set background=dark
-let g:molokai_original = 1
+" let g:molokai_original = 1
 let g:rehash256 = 1
 " colorscheme molokai
 colorscheme nord
 
 " Vim airline configuration
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='hybrid'
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
 
 " Elixir
 let g:mix_format_on_save = 1
