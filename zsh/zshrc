@@ -74,4 +74,12 @@ function gmock() {
 
 eval "$(rbenv init -)"
 
+# LLVM path
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# Haskell cabal path
+export PATH=$HOME/.cabal/bin:$PATH
+
+export PATH=$HOME:~/.local/bin:$PATH
+
 export PATH="/usr/local/sbin:$PATH"
