@@ -18,7 +18,6 @@ Plug 'tpope/vim-projectionist'
 Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'arcticicestudio/nord-vim'
 
 " Git support
 Plug 'tpope/vim-fugitive'
@@ -158,10 +157,9 @@ set title
 syntax enable
 set t_Co=256
 set background=dark
-" let g:molokai_original = 1
+let g:molokai_original = 1
 let g:rehash256 = 1
-" colorscheme molokai
-colorscheme nord
+colorscheme molokai
 
 " Vim airline configuration
 let g:airline#extensions#tabline#enabled = 1
