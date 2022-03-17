@@ -42,8 +42,6 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-export PATH="$HOME/.fastlane/bin:$PATH"
-
 export GTEST_DIR="$HOME/Development/build/googletest/googletest"
 export GMOCK_DIR="$HOME/Development/build/googletest/googlemock"
 
