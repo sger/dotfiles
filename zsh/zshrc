@@ -38,7 +38,7 @@ export LANG=en_US.UTF-8
 
 # Golang
 export GOPATH=$HOME/Development/go
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/opt/homebrew/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
@@ -47,8 +47,8 @@ export GMOCK_DIR="$HOME/Development/build/googletest/googlemock"
 
 export LLVM_BIN=$HOME/Development/Compilers/llvm-project/install/bin
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 function gtest() {
   gtestexec='gtest'
