@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/spirosgerokostas/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -42,25 +42,10 @@ export GOROOT=/opt/homebrew/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-export GTEST_DIR="$HOME/Development/build/googletest/googletest"
-export GMOCK_DIR="$HOME/Development/build/googletest/googlemock"
-
 export LLVM_BIN=$HOME/Development/Compilers/llvm-project/install/bin
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-function gtest() {
-  gtestexec='gtest'
-  g++ -std=c++11 -isystem ${GTEST_DIR}/include -pthread "$@" ${GTEST_DIR}/libgtest.a -o $gtestexec
-  ./$gtestexec
-}
-
-function gmock() {
-  gmockexec='gmock'
-  g++ -std=c++11 -isystem ${GTEST_DIR}/include -isystem ${GMOCK_DIR}/include -pthread "$@" ${GMOCK_DIR}/libgmock.a -o $gmockexec
-  ./$gmockexec
-}
 
 eval "$(rbenv init -)"
 
